@@ -1,38 +1,54 @@
-import styles from "../styles/Featured.module.css";
-import Image from "next/image";
-import { useState } from "react";
-
+import styles from '../styles/Featured.module.css';
+import Image from 'next/image';
+import { useState } from 'react';
+import { IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
 const Featured = () => {
   const [index, setIndex] = useState(0);
-  const images = [
-    "/img/img-1.png",
-    "/img/book1.jpg",
-    "/img/book2.jpeg",
-  ];
+  const images = ['/img/book3.png', '/img/students.png', '/img/notes.png'];
 
-  const handleArrow = (direction) =>{
-      if(direction==="l"){
-          setIndex(index !== 0 ? index-1 : 2)
-      }
-      if(direction==="r"){
-          setIndex(index !== 2 ? index+1 : 0)
-      }
-  }
+  const handleArrow = (direction) => {
+    if (direction === 'l') {
+      setIndex(index != 0 ? index - 1 : 2);
+    }
+    if (direction === 'r') {
+      setIndex(index != 2 ? index + 1 : 0);
+    }
+  };
 
   return (
     <div className={styles.container}>
-      <div className={styles.arrowContainer} style={{ left: 0 }} onClick={()=>handleArrow("l")}>
-        <Image src="/img/arrowl.png" alt="" layout="fill" objectFit="contain"/>
+      <div
+        className={styles.arrowContainer}
+        style={{ left: 0 }}
+        onClick={() => handleArrow('l')}
+      >
+        {/* <Image
+          src="/img/arrowl.png"
+          alt=""
+          layout="fill"
+          objectFit="contain"
+          style={{ color: 'disabled' }}
+        /> */}
+        <IoIosArrowBack size={70} color="black" />
       </div>
-      <div className={styles.wrapper} style={{transform:`translateX(${-100*index}vw)`}}>
+      <div
+        className={styles.wrapper}
+        style={{ transform: `translateX(${-100 * index}vw)` }}
+      >
         {images.map((img, i) => (
           <div className={styles.imgContainer} key={i}>
-            <Image src={img} alt="" layout="fill"/>
+            <Image src={img} alt="" layout="fill" objectFit="contain" />
+
           </div>
         ))}
       </div>
-      <div className={styles.arrowContainer} style={{ right: 0 }} onClick={()=>handleArrow("r")}>
-        <Image src="/img/arrowr.png" layout="fill" alt="" objectFit="contain"/>
+      <div
+        className={styles.arrowContainer}
+        style={{ right: 0 }}
+        onClick={() => handleArrow('r')}
+      >
+        {/* <Image src="/img/arrowr.png" layout="fill" alt="" objectFit="contain" /> */}
+        <IoIosArrowForward size="70" color="black"/>
       </div>
     </div>
   );
