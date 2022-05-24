@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import styles from '../styles/Navbar.module.css';
 import Image from 'next/image'
@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className={styles.container}>
       <div className={styles.item}>
         <div className={styles.callbutton}>
-          <CallOutlinedIcon />
+          <MailOutlineIcon />
         </div>
         <div className={styles.texts}>
           <div className={styles.text}>BUY NOWwwww!</div>
