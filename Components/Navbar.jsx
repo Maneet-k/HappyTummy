@@ -13,8 +13,8 @@ const Navbar = () => {
           <MailOutlineIcon />
         </div>
         <div className={styles.texts}>
-          <div className={styles.text}>Contact us</div>
-          <div className={styles.text}>blahblah123@gmail.com</div>
+          <div className={styles.text}>BUY NOWwwww!</div>
+          <div className={styles.text}>012 333 666</div>
         </div>
       </div>
       <div className={styles.item}>
